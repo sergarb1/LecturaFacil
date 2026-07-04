@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="ig512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#5b21b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="48" fill="url(#ig512)"/>
+
+  <!-- Open book -->
+  <g transform="translate(96, 80)">
+    <path d="M0 60 Q0 30 30 30 L160 30 L160 300 L0 300 Z" fill="white" opacity="0.9"/>
+    <path d="M160 30 L290 30 Q320 30 320 60 L320 300 L160 300 Z" fill="white"/>
+    <rect x="150" y="30" width="20" height="270" rx="4" fill="#8b5cf6"/>
+    <path d="M160 100 L160 300 L0 300 Z" fill="white" opacity="0.85"/>
+    <!-- Bookmark -->
+    <path d="M160 245 L130 275 L160 265 L190 275 Z" fill="#f59e0b"/>
+  </g>
+
+  <!-- "LF" text -->
+  <text x="256" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="100" fill="white">LF</text>
+
+  <!-- Small dots around the book (decoration) -->
+  <circle cx="100" cy="100" r="6" fill="white" opacity="0.2"/>
+  <circle cx="412" cy="80" r="5" fill="white" opacity="0.15"/>
+  <circle cx="420" cy="200" r="4" fill="white" opacity="0.2"/>
+  <circle cx="90" cy="380" r="5" fill="white" opacity="0.15"/>
+  <circle cx="380" cy="430" r="3" fill="white" opacity="0.2"/>
+</svg>

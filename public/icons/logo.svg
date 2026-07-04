@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48">
+  <defs>
+    <linearGradient id="lg-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Book icon -->
+  <g transform="translate(6, 6)">
+    <!-- Left page -->
+    <path d="M0 4 Q0 0 4 0 L16 0 L16 32 L0 32 Z" fill="url(#lg-logo)" opacity="0.85"/>
+    <!-- Right page -->
+    <path d="M16 0 L28 0 Q32 0 32 4 L32 32 L16 32 Z" fill="url(#lg-logo)"/>
+    <!-- Spine -->
+    <rect x="14" y="0" width="4" height="32" fill="#5b21b6" rx="1"/>
+    <!-- Bookmark ribbon -->
+    <path d="M16 26 L13 31 L16 29 L19 31 Z" fill="#f59e0b"/>
+    <!-- "L" on left page -->
+    <text x="8" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="white">L</text>
+    <!-- "F" on right page -->
+    <text x="24" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="white">F</text>
+  </g>
+
+  <!-- Texto -->
+  <text x="48" y="31" font-family="Arial, sans-serif" font-weight="800" font-size="18" fill="#4c1d95">
+    LecturaFacil
+  </text>
+</svg>
