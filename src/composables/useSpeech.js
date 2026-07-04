@@ -64,7 +64,7 @@ function cleanHighlights() {
 }
 
 export function useSpeech() {
-  function speak(text, rate = 1) {
+  function speak(text, rate = 1, lang = 'es') {
     if (!text) return
     window.speechSynthesis.cancel()
     isPaused.value = false
@@ -81,10 +81,11 @@ export function useSpeech() {
     utterance.rate = rate
     utterance.pitch = 1
     utterance.volume = 1
+    utterance.lang = lang
 
     const voices = window.speechSynthesis.getVoices()
-    const spanishVoice = voices.find(v => v.lang.startsWith('es'))
-    if (spanishVoice) utterance.voice = spanishVoice
+    const voice = voices.find(v => v.lang.startsWith(lang))
+    if (voice) utterance.voice = voice
 
     utterance.onboundary = (event) => {
       if (event.name === 'word') {

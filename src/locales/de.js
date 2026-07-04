@@ -13,9 +13,7 @@ export default {
     importDocx: 'Word importieren',
     ocrImage: 'Bild lesen',
     processingOCR: 'Verarbeitung...',
-    guidedReading: 'Geführtes Lesen',
-    dictionary: 'Wörterbuch',
-    hideDictionary: 'Wörterbuch ausblenden'
+    guidedReading: 'Geführtes Lesen'
   },
   editor: {
     placeholder: 'Beginnen Sie hier zu schreiben...',
@@ -23,12 +21,7 @@ export default {
     italic: 'Kursiv',
     underline: 'Unterstrichen',
     fontSize: 'Größe',
-    fontFamily: 'Schriftart',
-    wordDefinition: 'Definition',
-    connectionError: 'Verbindungsfehler',
-    noDefinition: 'Keine Definition gefunden',
-    onlineSource: 'Online-Quelle',
-    offlineSource: 'lokales Wörterbuch'
+    fontFamily: 'Schriftart'
   },
   voice: {
     title: 'Vorlesen',

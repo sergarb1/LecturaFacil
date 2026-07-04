@@ -1,15 +1,29 @@
 <script setup>
 import { inject, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { exampleTexts } from '../data/example-texts.js'
+import { useDB } from '../composables/useDB.js'
 
 const editorState = inject('editorState')
-const { t } = useI18n()
-const fonts = ['OpenDyslexic', 'Arial', 'Verdana', 'Tahoma', 'Georgia', 'Times New Roman']
+const { t, locale } = useI18n()
+const fonts = ['OpenDyslexic', 'Atkinson Hyperlegible', 'Lexend', 'Comic Neue', 'Arial', 'Verdana', 'Tahoma', 'Georgia', 'Times New Roman']
 
 function execCmd(cmd, val = null) {
   document.execCommand(cmd, false, val)
   const editor = document.querySelector('.editor-content')
   if (editor) editor.focus()
+}
+
+function cargarEjemplo() {
+  const lang = locale.value
+  const ejemplo = exampleTexts[lang] || exampleTexts.es
+  const editor = document.querySelector('.editor-content')
+  if (editor) {
+    editor.innerHTML = `<h2>${ejemplo.title}</h2><p>${ejemplo.text.replace(/\n/g, '<br>')}</p>`
+    editorState.content = editor.innerHTML
+    const db = useDB()
+    db.saveContent(editor.innerHTML)
+  }
 }
 </script>
 
@@ -46,5 +60,11 @@ function execCmd(cmd, val = null) {
 
     <button @click="execCmd('formatBlock', '<p>')" class="p-2 rounded-lg hover:bg-gray-100 text-xs" title="Párrafo">¶</button>
     <button @click="execCmd('formatBlock', '<h2>')" class="p-2 rounded-lg hover:bg-gray-100 text-xs font-bold" title="Título">H</button>
+
+    <span class="w-px h-6 bg-gray-200 mx-1"></span>
+
+    <button @click="cargarEjemplo" class="px-3 py-1.5 rounded-lg bg-lf-100 text-lf-700 hover:bg-lf-200 text-xs font-medium" title="Cargar texto de ejemplo">
+      📝 Ejemplo
+    </button>
   </div>
 </template>

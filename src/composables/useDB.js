@@ -6,8 +6,7 @@ function getDB() {
   if (!db) {
     db = new Dexie('LecturaFacil')
     db.version(1).stores({
-      content: 'id, html, updatedAt',
-      dictionary: 'id, lang, words'
+      content: 'id, html, updatedAt'
     })
   }
   return db

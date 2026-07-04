@@ -14,8 +14,7 @@ const editorState = reactive({
   readerMode: false,
   isSpeaking: false,
   speechSpeed: 1,
-  guidedMode: false,
-  dictionaryMode: false
+  guidedMode: false
 })
 
 provide('editorState', editorState)

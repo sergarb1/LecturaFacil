@@ -13,9 +13,7 @@ export default {
     importDocx: 'Import Word',
     ocrImage: 'Read image',
     processingOCR: 'Processing...',
-    guidedReading: 'Guided reading',
-    dictionary: 'Dictionary',
-    hideDictionary: 'Hide dictionary'
+    guidedReading: 'Guided reading'
   },
   editor: {
     placeholder: 'Start writing here...',
@@ -23,12 +21,7 @@ export default {
     italic: 'Italic',
     underline: 'Underline',
     fontSize: 'Size',
-    fontFamily: 'Font',
-    wordDefinition: 'Definition',
-    connectionError: 'Connection error',
-    noDefinition: 'No definition found',
-    onlineSource: 'online source',
-    offlineSource: 'local dictionary'
+    fontFamily: 'Font'
   },
   voice: {
     title: 'Text to speech',

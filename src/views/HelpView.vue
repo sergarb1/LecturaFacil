@@ -92,14 +92,15 @@ const secciones = [
     ]
   },
   {
-    icon: '📖',
-    titulo: 'Diccionario explicativo',
+    icon: '🔤',
+    titulo: 'Fuentes para dislexia',
     items: [
-      'Activa "Diccionario" y haz clic en cualquier palabra para ver su definición.',
-      'El diccionario busca primero en internet (FreeDictionaryAPI).',
-      'Si no hay conexión, usa un diccionario local con cientos de palabras.',
-      'Disponible en los 9 idiomas: español, valenciano, catalán, euskera, gallego, inglés, francés, portugués y alemán.',
-      'Ideal para aprender vocabulario nuevo mientras se lee.'
+      'LecturaFacil incluye 4 fuentes diseñadas para mejorar la legibilidad:',
+      '  • OpenDyslexic — https://opendyslexic.org — Letra pesada en la base para reducir giros',
+      '  • Atkinson Hyperlegible — https://brailleinstitute.org/freefont — Alta legibilidad del Braille Institute',
+      '  • Lexend — https://lexend.com — Diseñada para fluidez y velocidad lectora',
+      '  • Comic Neue — https://comicneue.com — Versión refinada de Comic Sans, informal y clara',
+      'Cada persona puede elegir la que le resulte más cómoda. Todas son gratuitas (SIL OFL).'
     ]
   },
   {
@@ -131,7 +132,9 @@ const consejos = [
   'El diccionario explicativo funciona sin conexión con cientos de palabras predefinidas.',
   'Todos tus textos se guardan en tu navegador. No se envían a ningún servidor externo.',
   'Puedes instalar LecturaFacil como aplicación en tu móvil o PC (PWA).',
-  'Las fuentes OpenDyslexic se cargan localmente, no necesitas descargar nada.'
+      'Todas las fuentes (OpenDyslexic, Atkinson Hyperlegible, Lexend, Comic Neue) se cargan localmente.',
+      'Los pictogramas ARASAAC están bajo licencia CC BY-NC-SA — https://arasaac.org',
+      'Las fuentes tipográficas tienen licencia SIL OFL 1.1 (Open Font License).'
 ]
 </script>
 

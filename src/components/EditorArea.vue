@@ -6,9 +6,7 @@ import { usePictogram } from '../composables/usePictogram.js'
 import { useDB } from '../composables/useDB.js'
 import { useFocusLine } from '../composables/useFocusLine.js'
 import { useGuidedReading } from '../composables/useGuidedReading.js'
-import { useDictionary } from '../composables/useDictionary.js'
 import { useReadingRuler } from '../composables/useReadingRuler.js'
-import DefinitionTooltip from './DefinitionTooltip.vue'
 import WordStats from './WordStats.vue'
 
 const editorState = inject('editorState')
@@ -18,9 +16,7 @@ const { getPresets, applyColorPerLetter, removeColorPerLetter } = useColorPerLet
 const { pictogramMode, findPictograms } = usePictogram()
 const { focusLineActive, setLinePosition } = useFocusLine()
 const { guidedMode, currentIndex, totalWords, handleKeydown, handleWordClick, nextWord, prevWord, toggleGuided } = useGuidedReading()
-const { definition, loading, errorMsg, lookup } = useDictionary()
 const { rulerActive, rulerY, setRulerPosition } = useReadingRuler()
-const showDef = ref(false)
 
 const editorStyle = computed(() => ({
   fontFamily: editorState.font,
@@ -97,30 +93,15 @@ async function onClick(e) {
     return
   }
 
-  if (editorState.dictionaryMode || editorState.readerMode) {
+  if (editorState.readerMode) {
     const selection = window.getSelection()
     const selected = selection?.toString().trim()
-
-    let wordToLookup = ''
     if (selected && selected.length > 0 && selected.length < 50) {
-      wordToLookup = selected.split(/\s+/)[0]
-    } else {
-      const el = e.target
-      if (el && el.closest('.pictogram-inline,.gr-word,.lf-highlight')) return
-      wordToLookup = el.textContent?.trim().split(/\s+/)[0] || ''
-    }
-
-    if (wordToLookup && wordToLookup.length > 0) {
-      const locale = document.documentElement.lang || 'es'
-      await lookup(wordToLookup.replace(/[^a-zA-Záéíóúñüàèìòùäëïöüç]/g, ''), locale)
-      showDef.value = true
+      // solo en readerMode, selección permitida
     }
   }
 }
 
-function closeDef() {
-  showDef.value = false
-}
 </script>
 
 <template>
@@ -162,12 +143,5 @@ function closeDef() {
     <!-- Estadísticas -->
     <WordStats />
 
-    <!-- Tooltip definición -->
-    <DefinitionTooltip
-      :definition="definition"
-      :loading="loading"
-      :error="errorMsg"
-      :visible="showDef"
-      @close="closeDef" />
   </div>
 </template>

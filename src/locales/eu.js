@@ -13,9 +13,7 @@ export default {
     importDocx: 'Word inportatu',
     ocrImage: 'Irudia irakurri',
     processingOCR: 'Prozesatzen...',
-    guidedReading: 'Gidatutako irakurketa',
-    dictionary: 'Hiztegia',
-    hideDictionary: 'Hiztegia ezkutatu'
+    guidedReading: 'Gidatutako irakurketa'
   },
   editor: {
     placeholder: 'Hasi hemen idazten...',
@@ -23,12 +21,7 @@ export default {
     italic: 'Etzana',
     underline: 'Azpimarratua',
     fontSize: 'Tamaina',
-    fontFamily: 'Letra-tipoa',
-    wordDefinition: 'Definizioa',
-    connectionError: 'Konexio-errorea',
-    noDefinition: 'Ez da definiziorik aurkitu',
-    onlineSource: 'lineako iturria',
-    offlineSource: 'tokiko hiztegia'
+    fontFamily: 'Letra-tipoa'
   },
   voice: {
     title: 'Ahots bidezko irakurketa',

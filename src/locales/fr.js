@@ -13,9 +13,7 @@ export default {
     importDocx: 'Importer Word',
     ocrImage: 'Lire image',
     processingOCR: 'Traitement...',
-    guidedReading: 'Lecture guidée',
-    dictionary: 'Dictionnaire',
-    hideDictionary: 'Masquer le dictionnaire'
+    guidedReading: 'Lecture guidée'
   },
   editor: {
     placeholder: 'Commencez à écrire ici...',
@@ -23,12 +21,7 @@ export default {
     italic: 'Italique',
     underline: 'Souligné',
     fontSize: 'Taille',
-    fontFamily: 'Police',
-    wordDefinition: 'Définition',
-    connectionError: 'Erreur de connexion',
-    noDefinition: 'Aucune définition trouvée',
-    onlineSource: 'source en ligne',
-    offlineSource: 'dictionnaire local'
+    fontFamily: 'Police'
   },
   voice: {
     title: 'Lecture à voix haute',

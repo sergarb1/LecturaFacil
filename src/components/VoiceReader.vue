@@ -3,7 +3,7 @@ import { useSpeech } from '../composables/useSpeech.js'
 import { useI18n } from 'vue-i18n'
 
 const { speak, stop, pause, resume, isSpeaking, isPaused, speed, setSpeed } = useSpeech()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const props = defineProps({
   text: { type: String, default: '' }
@@ -11,13 +11,13 @@ const props = defineProps({
 
 function handlePlay() {
   const content = props.text || document.querySelector('.editor-content')?.innerText || ''
-  if (content.trim()) speak(content, speed.value)
+  if (content.trim()) speak(content, speed.value, locale.value)
 }
 </script>
 
 <template>
   <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 space-y-3">
-    <h3 class="font-semibold text-gray-700">{{ t('voice.title') }}</h3>
+    <h3 class="font-semibold text-gray-700">Lectura con voz</h3>
 
     <div class="flex items-center gap-2">
       <button @click="handlePlay" :disabled="isSpeaking && !isPaused"

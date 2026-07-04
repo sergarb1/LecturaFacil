@@ -51,6 +51,46 @@ const FUENTES = [
     nombre: 'OpenDyslexic Italic',
     url: 'https://cdn.jsdelivr.net/fontsource/fonts/opendyslexic@latest/latin-400-italic.woff2',
     archivo: 'OpenDyslexic-Italic.woff2'
+  },
+  {
+    nombre: 'Atkinson Hyperlegible Regular',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/atkinson-hyperlegible@latest/latin-400-normal.woff2',
+    archivo: 'AtkinsonHyperlegible-Regular.woff2'
+  },
+  {
+    nombre: 'Atkinson Hyperlegible Bold',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/atkinson-hyperlegible@latest/latin-700-normal.woff2',
+    archivo: 'AtkinsonHyperlegible-Bold.woff2'
+  },
+  {
+    nombre: 'Atkinson Hyperlegible Italic',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/atkinson-hyperlegible@latest/latin-400-italic.woff2',
+    archivo: 'AtkinsonHyperlegible-Italic.woff2'
+  },
+  {
+    nombre: 'Lexend Regular',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/lexend@latest/latin-400-normal.woff2',
+    archivo: 'Lexend-Regular.woff2'
+  },
+  {
+    nombre: 'Lexend Bold',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/lexend@latest/latin-700-normal.woff2',
+    archivo: 'Lexend-Bold.woff2'
+  },
+  {
+    nombre: 'Comic Neue Regular',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/comic-neue@latest/latin-400-normal.woff2',
+    archivo: 'ComicNeue-Regular.woff2'
+  },
+  {
+    nombre: 'Comic Neue Bold',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/comic-neue@latest/latin-700-normal.woff2',
+    archivo: 'ComicNeue-Bold.woff2'
+  },
+  {
+    nombre: 'Comic Neue Italic',
+    url: 'https://cdn.jsdelivr.net/fontsource/fonts/comic-neue@latest/latin-400-italic.woff2',
+    archivo: 'ComicNeue-Italic.woff2'
   }
 ]
 

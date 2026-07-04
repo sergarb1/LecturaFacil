@@ -18,6 +18,7 @@ import OCRUploader from './OCRUploader.vue'
 const editorState = inject('editorState')
 const { t } = useI18n()
 const { speak, stop, isSpeaking, speed, setSpeed } = useSpeech()
+const { locale } = useI18n()
 const { pictogramMode, togglePictogram } = usePictogram()
 const { focusLineActive, toggleFocusLine } = useFocusLine()
 const { guidedMode, toggleGuided } = useGuidedReading()
@@ -39,7 +40,7 @@ function handleSpeak() {
   } else {
     const text = editorState.content.replace(/<[^>]*>/g, '')
     if (text.trim()) {
-      speak(text, speed.value)
+      speak(text, speed.value, locale.value)
       editorState.isSpeaking = true
     }
   }
@@ -81,10 +82,6 @@ function handleSpeedChange(e) {
   setSpeed(parseFloat(e.target.value))
 }
 
-function toggleDictionary() {
-  editorState.dictionaryMode = !editorState.dictionaryMode
-}
-
 async function compartirTexto() {
   const text = (editorState.content || '').replace(/<[^>]*>/g, '').trim()
   if (!text) return
@@ -115,14 +112,6 @@ async function compartirTexto() {
       :class="{ active: guidedMode }">
       <span>🔤</span>
       <span class="hidden sm:inline">{{ t('accessibility.guidedReading') }}</span>
-    </button>
-
-    <!-- Diccionario -->
-    <button @click="toggleDictionary"
-      class="btn-access"
-      :class="{ active: editorState.dictionaryMode }">
-      <span>📖</span>
-      <span class="hidden sm:inline">{{ editorState.dictionaryMode ? t('accessibility.hideDictionary') : t('accessibility.dictionary') }}</span>
     </button>
 
     <!-- Regla de lectura -->

@@ -25,7 +25,7 @@ LecturaFacil es una **aplicación web progresiva (PWA)** de código abierto que 
 
 ✅ **100% offline** — Una vez cargada, funciona sin internet.  
 🔒 **Privacidad total** — Tus datos nunca salen de tu dispositivo.  
-🌍 **9 idiomas** — Interfaz y diccionarios en español, catalán, valenciano, euskera, gallego, inglés, francés, portugués y alemán.  
+🌍 **9 idiomas** — Interfaz completa en español, catalán, valenciano, euskera, gallego, inglés, francés, portugués y alemán.  
 📱 **PWA instalable** — En Android, iOS, Windows, macOS y Linux.  
 💰 **Gratuito para siempre** — Sin planes de pago, sin suscripciones, sin publicidad.
 
@@ -35,7 +35,8 @@ LecturaFacil es una **aplicación web progresiva (PWA)** de código abierto que 
 
 ### 🖊️ Editor de texto completo
 - Formato enriquecido (negrita, cursiva, listas)
-- Ajustes predefinidos para dislexia (fondo crema, fuente OpenDyslexic, interlineado 2.0)
+- Ajustes predefinidos para dislexia (fondo crema, interlineado 2.0)
+- **4 fuentes amigas de la dislexia**: OpenDyslexic, Atkinson Hyperlegible, Lexend y Comic Neue
 - Temas de color: claro, oscuro, sepia, alto contraste
 - Contador de palabras y estadísticas en tiempo real
 - Corrector ortográfico del navegador
@@ -56,12 +57,7 @@ LecturaFacil es una **aplicación web progresiva (PWA)** de código abierto que 
 - Velocidad ajustable: 0.5× a 2×
 - Cambio de velocidad con reinicio automático
 - Soporta los 9 idiomas con voces nativas del sistema
-
-### 📖 Diccionario explicativo integrado
-- Definiciones sencillas y claras para 9 idiomas
-- **100% offline** — no requiere APIs externas
-- Fallback opcional a FreeDictionaryAPI cuando hay conexión
-- Al hacer clic en una palabra, muestra su significado en un tooltip
+- Selecciona automáticamente la voz según el idioma activo del editor
 
 ### 👁️ Línea de enfoque
 - Overlay visual que oscurece todo excepto la línea activa
@@ -80,17 +76,17 @@ LecturaFacil es una **aplicación web progresiva (PWA)** de código abierto que 
 - **URL**: extrae texto de cualquier página web
 
 ### 🌍 Soporte multilingüe (9 idiomas)
-| Idioma | Código | Pictogramas | Diccionario | Interfaz UI |
-|--------|--------|:-----------:|:-----------:|:-----------:|
-| Castellano | `es` | ✅ | ✅ | ✅ |
-| Català | `ca` | ✅ | ✅ | ✅ |
-| Valencià | `va` | ✅ | ✅ | ✅ |
-| Euskera | `eu` | ✅ | ✅ | ✅ |
-| Galego | `gl` | ✅ | ✅ | ✅ |
-| English | `en` | ✅ | ✅ | ✅ |
-| Français | `fr` | ✅ | ✅ | ✅ |
-| Português | `pt` | ✅ | ✅ | ✅ |
-| Deutsch | `de` | ✅ | ✅ | ✅ |
+| Idioma | Código | Pictogramas | Interfaz UI |
+|--------|--------|:-----------:|:-----------:|
+| Castellano | `es` | ✅ | ✅ |
+| Català | `ca` | ✅ | ✅ |
+| Valencià | `va` | ✅ | ✅ |
+| Euskera | `eu` | ✅ | ✅ |
+| Galego | `gl` | ✅ | ✅ |
+| English | `en` | ✅ | ✅ |
+| Français | `fr` | ✅ | ✅ |
+| Português | `pt` | ✅ | ✅ |
+| Deutsch | `de` | ✅ | ✅ |
 
 ### 💾 Persistencia y PWA
 - Auto-guardado al escribir (500ms debounced)
@@ -134,6 +130,10 @@ npm run preview
 | [Vue 3](https://vuejs.org/) (Composition API) | ^3.5 | Framework UI — `<script setup>` + provide/inject |
 | [Vite](https://vitejs.dev/) | ^6.0 | Build tool ultrarrápido |
 | [Tailwind CSS](https://tailwindcss.com/) | ^4.0 | Estilos utility-first |
+| [OpenDyslexic](https://opendyslexic.org) | — | Fuente para dislexia (SIL OFL) |
+| [Atkinson Hyperlegible](https://brailleinstitute.org/freefont) | — | Fuente de alta legibilidad (SIL OFL) |
+| [Lexend](https://lexend.com) | — | Fuente para fluidez lectora (SIL OFL) |
+| [Comic Neue](https://comicneue.com) | — | Fuente informal legible (SIL OFL) |
 | [Dexie.js](https://dexie.org/) | ^4.0 | IndexedDB para persistencia offline |
 | [Tesseract.js](https://tesseract.projectnaptha.com/) | ^5.1 | OCR en navegador (wasm) |
 | [Mammoth.js](https://mammoth.al) | ^1.9 | Conversor .docx → HTML |
@@ -152,7 +152,7 @@ LecturaFacil/
 ├── index.html                     ← Entry point HTML
 ├── vite.config.js                 ← Configuración Vite + Tailwind + PWA
 ├── public/
-│   ├── fonts/                     ← OpenDyslexic .woff2 (locales)
+│   ├── fonts/                     ← Fuentes .woff2 locales (OpenDyslexic, Atkinson, Lexend, Comic Neue)
 │   ├── icons/                     ← Iconos PWA (SVG)
 │   ├── pictograms/                ← 51 imágenes ARASAAC locales
 │   └── manifest.webmanifest       ← Manifest PWA
@@ -163,7 +163,7 @@ LecturaFacil/
 │   ├── data/
 │   │   ├── pictogram-dictionary.js       ← Merge de 135 archivos (9 idiomas × 15 categorías)
 │   │   ├── pictogram-{categoria}-{idioma}.js  ← 135 archivos individuales
-│   │   ├── dictionary-{idioma}           ← 9 diccionarios offline (definiciones)
+│   │   ├── example-texts.js              ← Textos de ejemplo multilingüe
 │   ├── locales/
 │   │   ├── es.js, ca.js, va.js, ...      ← 9 archivos de traducción UI
 │   ├── views/
@@ -179,7 +179,7 @@ LecturaFacil/
 │       ├── useEditor.js, useSpeech.js, usePictogram.js
 │       ├── useColorPerLetter.js, useFocusLine.js
 │       ├── useDocx.js, usePdf.js, useOCR.js
-│       ├── useDB.js, useDictionary.js, usePassport.js
+│       ├── useDB.js, usePassport.js
 └── scripts/
     ├── download-libs.js           ← Descarga fuentes y librerías offline
     └── translate-pictograms.js    ← Script de traducción de pictogramas
@@ -195,7 +195,7 @@ LecturaFacil es una aplicación **100% cliente**. Todo el procesamiento ocurre e
 
 - **OCR** → Tesseract.js (wasm en segundo plano)
 - **Voz** → Web Speech API del navegador
-- **Diccionario** → Archivos locales (sin API)
+- **Voz** → Web Speech API del navegador (selecciona el idioma activo automáticamente)
 - **Persistencia** → IndexedDB (navegador)
 - **Pictogramas** → Imágenes locales en `public/pictograms/`
 
@@ -225,7 +225,7 @@ const editorState = reactive({
 1. **Service Worker** — Generado automáticamente por vite-plugin-pwa, cachea todos los assets
 2. **Fuentes** — OpenDyslexic en `public/fonts/` 
 3. **Pictogramas** — 51 imágenes descargadas localmente
-4. **Diccionarios** — Definiciones completas para 9 idiomas
+4. **Fuentes** — OpenDyslexic, Atkinson Hyperlegible, Lexend y Comic Neue en almacenamiento local
 5. **IndexedDB** — Contenido guardado automáticamente al escribir
 
 ---
@@ -257,11 +257,14 @@ Los símbolos pictográficos utilizados en esta aplicación son propiedad del **
 - Descargadas desde el repositorio oficial de ARASAAC
 - No se realizan peticiones a servidores externos en runtime
 
-### Fuente OpenDyslexic
-Creada por **Abelardo González** y distribuida bajo licencia **SIL Open Font License 1.1**.
+### Fuentes tipográficas
 
-### Diccionarios
-Definiciones originales de LecturaFacil — 100% locales y sin dependencia de APIs externas.
+| Fuente | Creador | Licencia | Web oficial |
+|--------|---------|----------|-------------|
+| **OpenDyslexic** | Abelardo González | SIL OFL 1.1 | https://opendyslexic.org |
+| **Atkinson Hyperlegible** | Braille Institute | SIL OFL 1.1 | https://brailleinstitute.org/freefont |
+| **Lexend** | Thomas Jockin | SIL OFL 1.1 | https://lexend.com |
+| **Comic Neue** | Craig Rozynski | SIL OFL 1.1 | https://comicneue.com |
 
 ### Dependencias de terceros
 Todas las librerías utilizadas (Vue, Vite, Tailwind, Dexie, Tesseract, Mammoth, pdfjs, jsPDF, vue-i18n, vite-plugin-pwa) tienen licencias de código abierto permisivas (MIT, Apache 2.0, BSD).
@@ -283,7 +286,7 @@ Antes de contribuir, consulta nuestra [Guía de contribución](CONTRIBUTING.md) 
 
 ## 🧪 Estado del proyecto
 
-✅ **MVP completo** — Editor, pictogramas, voz, diccionario, OCR, DOCX, PDF, PWA, 9 idiomas  
+✅ **MVP completo** — Editor, pictogramas, voz, OCR, DOCX, PDF, PWA, 9 idiomas  
 🔧 **En desarrollo activo** — Mejoras continuas de accesibilidad y rendimiento
 
 ---
