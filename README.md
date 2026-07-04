@@ -5,7 +5,15 @@
 **Editor de texto accesible e inclusivo**  
 🫱‍🫲 Para personas con dislexia, dificultades de aprendizaje, TDAH, TEA y cualquier persona que busque una experiencia de lectura y escritura más cómoda y personalizable.
 
-🌐 **[Prueba LecturaFacil ahora](https://sergarb1.github.io/LecturaFacil)** — 100% gratis, sin registro, sin servidor.
+<br>
+
+## 👇 ¡Pruébalo ahora! 👇
+
+### 🚀 [**https://sergarb1.github.io/LecturaFacil**](https://sergarb1.github.io/LecturaFacil)
+
+**100% gratis · Sin registro · Sin servidor · Funciona sin internet**
+
+<br>
 
 ---
 
