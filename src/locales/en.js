@@ -13,7 +13,12 @@ export default {
     importDocx: 'Import Word',
     ocrImage: 'Read image',
     processingOCR: 'Processing...',
-    guidedReading: 'Guided reading'
+    guidedReading: 'Guided reading',
+    ruler: 'Reading ruler',
+    focusLine: 'Focus line',
+    themes: 'Visual themes',
+    visualTheme: 'Visual theme',
+    share: 'Share'
   },
   editor: {
     placeholder: 'Start writing here...',

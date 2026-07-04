@@ -115,23 +115,23 @@ async function compartirTexto() {
     </button>
 
     <!-- Regla de lectura -->
-    <button @click="toggleRuler"
+    <button @click="toggleRuler" :title="t('accessibility.ruler')"
       class="btn-access"
       :class="{ active: rulerActive }">
       <span>📏</span>
-      <span class="hidden sm:inline">Regla</span>
+      <span class="hidden sm:inline">{{ t('accessibility.ruler') }}</span>
     </button>
 
     <!-- Línea de enfoque -->
-    <button @click="toggleFocusLine"
+    <button @click="toggleFocusLine" :title="t('accessibility.focusLine')"
       class="btn-access"
       :class="{ active: focusLineActive }">
       <span>👁️</span>
-      <span class="hidden sm:inline">Línea</span>
+      <span class="hidden sm:inline">{{ t('accessibility.focusLine') }}</span>
     </button>
 
     <!-- Leer en voz alta -->
-    <button @click="handleSpeak"
+    <button @click="handleSpeak" :title="isSpeaking ? t('accessibility.stop') : t('accessibility.read')"
       class="btn-access"
       :class="{ active: isSpeaking }">
       <span>{{ isSpeaking ? '⏹️' : '🔊' }}</span>
@@ -151,7 +151,7 @@ async function compartirTexto() {
     <span class="w-px h-6 bg-lf-100 mx-1"></span>
 
     <!-- Color por letra -->
-    <button @click="showColorPanel = !showColorPanel"
+    <button @click="showColorPanel = !showColorPanel" :title="t('accessibility.colorPerLetter')"
       class="btn-access"
       :class="{ active: editorState.colorPerLetter }">
       <span>🎨</span>
@@ -159,7 +159,7 @@ async function compartirTexto() {
     </button>
 
     <!-- Pictogramas -->
-    <button @click="togglePictogram"
+    <button @click="togglePictogram" :title="t('accessibility.pictograms')"
       class="btn-access"
       :class="{ active: pictogramMode }">
       <span>🖼️</span>
@@ -167,7 +167,7 @@ async function compartirTexto() {
     </button>
 
     <!-- Temas -->
-    <button @click="showThemePanel = !showThemePanel"
+    <button @click="showThemePanel = !showThemePanel" :title="t('accessibility.themes')"
       class="btn-access"
       :class="{ active: showThemePanel }">
       <span>{{ activeTheme.icon }}</span>
@@ -175,10 +175,10 @@ async function compartirTexto() {
     </button>
 
     <!-- Compartir -->
-    <button @click="compartirTexto"
+    <button @click="compartirTexto" :title="t('accessibility.share')"
       class="btn-access">
       <span>📤</span>
-      <span class="hidden sm:inline">Compartir</span>
+      <span class="hidden sm:inline">{{ t('accessibility.share') }}</span>
     </button>
 
     <span class="w-px h-6 bg-lf-100 mx-1"></span>
@@ -196,7 +196,7 @@ async function compartirTexto() {
 
     <!-- Panel temas -->
     <div v-if="showThemePanel" class="w-full bg-gray-50 rounded-lg p-3 animate-fade-in space-y-1.5">
-      <label class="text-xs font-medium text-gray-500 uppercase tracking-wider">Tema visual</label>
+      <label class="text-xs font-medium text-gray-500 uppercase tracking-wider">{{ t('accessibility.visualTheme') }}</label>
       <div class="flex flex-wrap gap-1.5">
         <button v-for="(t, key) in themes" :key="key"
           @click="applyTheme(key); showThemePanel = false"

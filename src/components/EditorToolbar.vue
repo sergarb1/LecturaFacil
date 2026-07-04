@@ -3,9 +3,13 @@ import { inject, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { exampleTexts } from '../data/example-texts.js'
 import { useDB } from '../composables/useDB.js'
+import { usePictogram } from '../composables/usePictogram.js'
+import { useColorPerLetter } from '../composables/useColorPerLetter.js'
 
 const editorState = inject('editorState')
 const { t, locale } = useI18n()
+const { refreshPictograms } = usePictogram()
+const { getPresets, applyColorPerLetter, removeColorPerLetter } = useColorPerLetter()
 const fonts = ['OpenDyslexic', 'Atkinson Hyperlegible', 'Lexend', 'Comic Neue', 'Arial', 'Verdana', 'Tahoma', 'Georgia', 'Times New Roman']
 
 function execCmd(cmd, val = null) {
@@ -23,6 +27,13 @@ function cargarEjemplo() {
     editorState.content = editor.innerHTML
     const db = useDB()
     db.saveContent(editor.innerHTML)
+    refreshPictograms()
+    if (editorState.colorPerLetter) {
+      const preset = getPresets()['arcoiris']
+      const colors = { ...(editorState.letterColors || preset.colors) }
+      removeColorPerLetter(editor)
+      applyColorPerLetter(editor, colors)
+    }
   }
 }
 </script>
@@ -52,14 +63,14 @@ function cargarEjemplo() {
 
     <span class="w-px h-6 bg-gray-200 mx-1"></span>
 
-    <button @click="execCmd('justifyLeft')" class="p-2 rounded-lg hover:bg-gray-100 text-xs" title="Alinear izquierda">◁</button>
-    <button @click="execCmd('justifyCenter')" class="p-2 rounded-lg hover:bg-gray-100 text-xs" title="Centrar">◈</button>
-    <button @click="execCmd('justifyRight')" class="p-2 rounded-lg hover:bg-gray-100 text-xs" title="Alinear derecha">▷</button>
+    <button @click="execCmd('justifyLeft')" class="hidden sm:inline-flex p-2 rounded-lg hover:bg-gray-100 text-xs" title="Alinear izquierda">◁</button>
+    <button @click="execCmd('justifyCenter')" class="hidden sm:inline-flex p-2 rounded-lg hover:bg-gray-100 text-xs" title="Centrar">◈</button>
+    <button @click="execCmd('justifyRight')" class="hidden sm:inline-flex p-2 rounded-lg hover:bg-gray-100 text-xs" title="Alinear derecha">▷</button>
 
-    <span class="w-px h-6 bg-gray-200 mx-1"></span>
+    <span class="w-px h-6 bg-gray-200 mx-1 hidden sm:inline-block"></span>
 
-    <button @click="execCmd('formatBlock', '<p>')" class="p-2 rounded-lg hover:bg-gray-100 text-xs" title="Párrafo">¶</button>
-    <button @click="execCmd('formatBlock', '<h2>')" class="p-2 rounded-lg hover:bg-gray-100 text-xs font-bold" title="Título">H</button>
+    <button @click="execCmd('formatBlock', '<p>')" class="hidden sm:inline-flex p-2 rounded-lg hover:bg-gray-100 text-xs" title="Párrafo">¶</button>
+    <button @click="execCmd('formatBlock', '<h2>')" class="hidden sm:inline-flex p-2 rounded-lg hover:bg-gray-100 text-xs font-bold" title="Título">H</button>
 
     <span class="w-px h-6 bg-gray-200 mx-1"></span>
 

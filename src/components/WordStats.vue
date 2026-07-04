@@ -14,25 +14,25 @@ const stats = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center gap-3 px-3 py-1.5 text-xs text-gray-400 border-t border-gray-100 bg-white/50">
-    <span class="flex items-center gap-1">
+  <div class="flex items-center gap-2 sm:gap-3 px-2 sm:px-3 py-1.5 text-xs text-gray-400 border-t border-gray-100 bg-white/50 overflow-x-auto">
+    <span class="flex items-center gap-1 whitespace-nowrap">
       <span class="text-gray-300">📝</span>
       <span><strong class="text-gray-500">{{ stats.words }}</strong> palabras</span>
     </span>
     <span class="w-px h-3 bg-gray-200"></span>
-    <span class="flex items-center gap-1">
+    <span class="flex items-center gap-1 whitespace-nowrap">
       <span class="text-gray-300">🔤</span>
       <span><strong class="text-gray-500">{{ stats.chars }}</strong> caracteres</span>
     </span>
-    <span class="w-px h-3 bg-gray-200"></span>
-    <span class="flex items-center gap-1">
+    <span class="w-px h-3 bg-gray-200 hidden sm:inline-block"></span>
+    <span class="hidden sm:flex items-center gap-1 whitespace-nowrap">
       <span class="text-gray-300">📏</span>
       <span><strong class="text-gray-500">{{ stats.lines }}</strong> líneas</span>
     </span>
-    <span class="w-px h-3 bg-gray-200"></span>
-    <span class="flex items-center gap-1">
+    <span class="w-px h-3 bg-gray-200 hidden sm:inline-block"></span>
+    <span class="hidden sm:flex items-center gap-1 whitespace-nowrap">
       <span class="text-gray-300">⏱️</span>
-      <span><strong class="text-gray-500">{{ stats.readingTime }}</strong> min lectura</span>
+      <span><strong class="text-gray-500">{{ stats.readingTime }}</strong> min</span>
     </span>
   </div>
 </template>

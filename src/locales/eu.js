@@ -13,7 +13,12 @@ export default {
     importDocx: 'Word inportatu',
     ocrImage: 'Irudia irakurri',
     processingOCR: 'Prozesatzen...',
-    guidedReading: 'Gidatutako irakurketa'
+    guidedReading: 'Gidatutako irakurketa',
+    ruler: 'Erregela',
+    focusLine: 'Foko-lerroa',
+    themes: 'Gai bisualak',
+    visualTheme: 'Gai bisuala',
+    share: 'Partekatu'
   },
   editor: {
     placeholder: 'Hasi hemen idazten...',

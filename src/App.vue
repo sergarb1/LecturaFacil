@@ -46,7 +46,8 @@ onMounted(() => {
       <div class="max-w-7xl mx-auto px-4 mt-3 pt-3 border-t border-white/10 text-[10px] text-white/40 leading-relaxed">
         <p>✅ Siempre gratis · Tus datos no suben a internet · Cumple GDPR · <a href="/#/about" class="hover:text-white/60 transition">Más info</a></p>
         <p>Pictogramas: Gobierno de Aragón — Sergio Palao — <a href="https://arasaac.org" target="_blank" rel="noopener" class="hover:text-white/60 transition">ARASAAC</a> (CC BY-NC-SA).</p>
-        <p>OpenDyslexic: Abelardo González (SIL OFL).</p>
+        <p>OpenDyslexic: Abelardo González · <a href="https://opendyslexic.org" target="_blank" rel="noopener" class="hover:text-white/60 transition">opendyslexic.org</a> (SIL OFL).</p>
+        <p>Atkinson Hyperlegible: <a href="https://brailleinstitute.org/freefont" target="_blank" rel="noopener" class="hover:text-white/60 transition">Braille Institute</a> · Lexend: <a href="https://lexend.com" target="_blank" rel="noopener" class="hover:text-white/60 transition">lexend.com</a> · Comic Neue: <a href="https://comicneue.com" target="_blank" rel="noopener" class="hover:text-white/60 transition">comicneue.com</a> (SIL OFL).</p>
       </div>
     </footer>
   </div>

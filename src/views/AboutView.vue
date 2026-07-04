@@ -35,7 +35,7 @@ const year = new Date().getFullYear()
           <li class="flex items-start gap-2"><span class="text-lf-500">✦</span> Color por letra para distinguir caracteres</li>
           <li class="flex items-start gap-2"><span class="text-lf-500">✦</span> Línea de enfoque para mantener la atención</li>
           <li class="flex items-start gap-2"><span class="text-lf-500">✦</span> Importación de Word, PDF e imágenes (OCR)</li>
-          <li class="flex items-start gap-2"><span class="text-lf-500">✦</span> Fuente OpenDyslexic para lectura cómoda</li>
+          <li class="flex items-start gap-2"><span class="text-lf-500">✦</span> <strong>4 fuentes amigas de la dislexia</strong>: OpenDyslexic, Atkinson Hyperlegible, Lexend y Comic Neue</li>
           <li class="flex items-start gap-2"><span class="text-lf-500">✦</span> 9 idiomas disponibles</li>
         </ul>
       </section>
@@ -102,7 +102,8 @@ const year = new Date().getFullYear()
             <p class="mt-1">Más información en <a href="https://aulaabierta.arasaac.org" target="_blank" class="text-lf-600 hover:underline">aulaabierta.arasaac.org</a>.</p>
           </div>
 
-          <p>La fuente <strong>OpenDyslexic</strong> fue creada por Abelardo González y se distribuye bajo licencia <strong>SIL Open Font License 1.1</strong>.</p>
+          <p>La fuente <strong>OpenDyslexic</strong> fue creada por Abelardo González — <a href="https://opendyslexic.org" target="_blank" class="text-lf-600 hover:underline">opendyslexic.org</a> (SIL OFL).</p>
+          <p><strong>Atkinson Hyperlegible</strong> del <a href="https://brailleinstitute.org/freefont" target="_blank" class="text-lf-600 hover:underline">Braille Institute</a>, <strong>Lexend</strong> de <a href="https://lexend.com" target="_blank" class="text-lf-600 hover:underline">lexend.com</a> y <strong>Comic Neue</strong> de <a href="https://comicneue.com" target="_blank" class="text-lf-600 hover:underline">comicneue.com</a> — todas bajo licencia SIL OFL 1.1.</p>
           <p>LecturaFacil {{ year }} &mdash; Porque leer no debería ser un obstáculo.</p>
         </div>
       </section>

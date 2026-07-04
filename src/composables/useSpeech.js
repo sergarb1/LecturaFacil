@@ -134,12 +134,12 @@ export function useSpeech() {
     speed.value = val
     if (isSpeaking.value && currentText) {
       const text = currentText
-      const wasPaused = isPaused.value
+      const lang = utterance?.lang || 'es'
       window.speechSynthesis.cancel()
       isSpeaking.value = false
       isPaused.value = false
       cleanHighlights()
-      speak(text, val)
+      speak(text, val, lang)
     }
   }
 

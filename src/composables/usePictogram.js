@@ -142,11 +142,19 @@ export function usePictogram() {
     }
   }
 
+  function refreshPictograms() {
+    if (pictogramMode.value) {
+      unmarkWords()
+      markWords()
+    }
+  }
+
   return {
     pictogramMode,
     togglePictogram,
     findPictogram,
     downloadPublicDictionary,
-    availableDictionaries
+    availableDictionaries,
+    refreshPictograms
   }
 }
